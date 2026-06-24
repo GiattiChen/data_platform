@@ -21,17 +21,39 @@
 
 ## 快速开始
 
+### 本地启动
+
 ```bash
 cd data_platform
 pip install -r requirements.txt
+cp credentials.txt.example credentials.txt   # 按需修改账号密码
 streamlit run app.py
 # 或
 bash start.sh
 ```
 
-默认端口：**8730**
+- 默认端口：**8730**
+- 本机访问：`http://localhost:8730`
+- 局域网访问（需已配置 `address = "0.0.0.0"`）：`http://<你的局域网IP>:8730`
+- 默认账号：`admin` / `admin123` 或 `demo` / `demo123`
 
-默认账号见 `credentials.txt.example`（需复制为 `credentials.txt` 后自行配置）
+### 公网临时访问（内网穿透）
+
+适合给外网用户临时演示，无需配置路由器端口转发。
+
+```bash
+# 终端 1：启动应用
+cd data_platform
+streamlit run app.py
+
+# 终端 2：启动隧道（需先安装 cloudflared）
+brew install cloudflared   # 首次使用需安装
+bash start_tunnel.sh
+```
+
+终端 2 会输出类似 `https://xxx.trycloudflare.com` 的临时公网地址，分享给他人即可访问。**保持该终端运行**，关闭后链接失效。
+
+> 注意：公网暴露时当前为明文账号密码鉴权，仅建议用于内部演示，勿用于生产环境。
 
 ## 项目结构
 
@@ -48,7 +70,8 @@ data_platform/
 │   └── login.py            # 登录认证
 ├── data/                   # 数据集元信息（JSON）
 ├── mock_samples/           # Mock 预览数据
-└── credentials.txt         # 用户凭证
+├── credentials.txt.example # 凭证模板（复制为 credentials.txt）
+└── credentials.txt         # 用户凭证（本地配置，不提交 Git）
 ```
 
 ## 数据字段

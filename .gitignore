@@ -8,12 +8,12 @@ venv/
 # Streamlit / runtime
 .login_states/
 
-# Secrets — use credentials.txt.example as template
+# Secrets — copy credentials.txt.example to credentials.txt
 credentials.txt
 
 # OS
 .DS_Store
 
-# IDE
+# IDEit status
 .idea/
 .vscode/
