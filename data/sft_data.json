@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "sft-001",
+    "name": "Alpaca-ZH",
+    "source": "https://github.com/ymcui/Chinese-LLaMA-Alpaca",
+    "registrant": "admin",
+    "is_open_source": true,
+    "data_size": "约 5万条",
+    "raw_path": "/data/raw/alpaca_zh",
+    "converted_path": "/data/processed/alpaca_zh_formatted.jsonl",
+    "converted_preview_path": "mock_samples/sft_sample.jsonl",
+    "process": "指令格式标准化 → 质量过滤",
+    "dynamic_tags": "经典中文指令微调数据",
+    "tags": {
+      "内容形态": ["指令跟随"],
+      "领域": ["通用"],
+      "语言": ["ZH"]
+    },
+    "parent_dataset": "无",
+    "stages": ["sft"],
+    "created_at": "2026-01-20 11:00:00",
+    "updated_at": "2026-01-20 11:00:00"
+  },
+  {
+    "_id": "sft-002",
+    "name": "多轮对话数据集",
+    "source": "内部构建",
+    "registrant": "admin",
+    "is_open_source": false,
+    "data_size": "约 10万条",
+    "raw_path": "/data/raw/multi_turn_chat",
+    "converted_path": "/data/processed/multi_turn_chat_v1.jsonl",
+    "converted_preview_path": "mock_samples/sft_sample.jsonl",
+    "process": "人工标注 → 格式转换 → 质量审核",
+    "dynamic_tags": "多轮对话 SFT 数据",
+    "tags": {
+      "内容形态": ["多轮对话"],
+      "领域": ["通用"],
+      "语言": ["ZH"]
+    },
+    "parent_dataset": "无",
+    "stages": ["sft"],
+    "created_at": "2026-02-15 16:00:00",
+    "updated_at": "2026-02-15 16:00:00"
+  },
+  {
+    "_id": "sft-003",
+    "name": "代码指令数据",
+    "source": "https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca",
+    "registrant": "demo",
+    "is_open_source": true,
+    "data_size": "约 1.8万条",
+    "raw_path": "/data/raw/code_instructions",
+    "converted_path": "/data/processed/code_instructions_formatted.jsonl",
+    "converted_preview_path": "mock_samples/sft_sample.jsonl",
+    "process": "代码清洗 → instruction 格式转换",
+    "dynamic_tags": "Python 代码生成指令",
+    "tags": {
+      "内容形态": ["代码", "指令跟随"],
+      "领域": ["科技"],
+      "语言": ["EN"]
+    },
+    "parent_dataset": "无",
+    "stages": ["sft"],
+    "created_at": "2026-03-05 10:30:00",
+    "updated_at": "2026-03-05 10:30:00"
+  },
+  {
+    "_id": "sft-004",
+    "name": "数学推理 CoT",
+    "source": "内部构建",
+    "registrant": "demo",
+    "is_open_source": false,
+    "data_size": "约 2万条",
+    "raw_path": "/data/raw/math_cot",
+    "converted_path": "/data/processed/math_cot_v1.jsonl",
+    "converted_preview_path": "mock_samples/sft_sample.jsonl",
+    "process": "数学题收集 → CoT 标注 → 格式标准化",
+    "dynamic_tags": "数学推理链数据",
+    "tags": {
+      "内容形态": ["数学推理", "推理链CoT"],
+      "领域": ["教育"],
+      "语言": ["ZH"]
+    },
+    "parent_dataset": "无",
+    "stages": ["sft"],
+    "created_at": "2026-06-01 09:00:00",
+    "updated_at": "2026-06-01 09:00:00"
+  }
+]
